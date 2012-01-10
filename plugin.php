@@ -17,12 +17,12 @@ function pds_settings_page() {
 }
 
 function pds_register_menu() {
-	add_submenu_page( 'plugins.php', 'Plugin Download Statistics', 'Plugin Downloads', 'manage_options', 'plugin_download_statistics', 'pds_settings_page' );
+	add_submenu_page( 'index.php', 'Plugin Download Statistics', 'Plugin Stats', 'manage_options', 'plugin_download_statistics', 'pds_settings_page' );
 }
 
 function pds_enqueue( $hook ) {
 
-	if ( $hook != 'plugins_page_plugin_download_statistics' )
+	if ( $hook != 'dashboard_page_plugin_download_statistics' )
 		return;
 
 	wp_enqueue_style( 'jqplot', plugins_url( '/js/jquery.jqplot.min.css', __FILE__ ) );
